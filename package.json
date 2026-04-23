@@ -1,0 +1,39 @@
+{
+  "name": "json-to-csv-lite",
+  "version": "1.0.0",
+  "description": "A lightweight JSON to CSV converter",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "json-to-csv-lite": "src/cli.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests configured yet\"",
+    "start": "node src/cli.js"
+  },
+  "keywords": [
+    "json",
+    "csv",
+    "converter",
+    "npm-package",
+    "cli"
+  ],
+  "author": "Jhumari Job Galos",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  }
+}

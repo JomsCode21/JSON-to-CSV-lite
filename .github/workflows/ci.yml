@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Smoke test CJS output
+        run: node -e "const { jsonToCsv } = require('./dist/index.cjs'); console.log(jsonToCsv([{name:'Ana',age:24},{name:'Ben',age:28}]));"
+
+      - name: Smoke test ESM output
+        run: node --input-type=module -e "import('./dist/index.mjs').then(({ jsonToCsv }) => console.log(jsonToCsv([{name:'Ana',age:24},{name:'Ben',age:28}])))"
+
+      - name: Verify publish contents (dry-run)
+        run: npm publish --dry-run

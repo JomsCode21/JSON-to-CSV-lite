@@ -1,0 +1,9 @@
+node_modules/
+.git/
+.vscode/
+*.log
+npm-debug.log*
+src/index.js
+src/index.ts
+src/index.d.ts
+tsup.config.ts
