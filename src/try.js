@@ -1,6 +1,7 @@
 const { jsonToCsv } = require('./index');
 
 try {
+    // Example usage of jsonToCsv function
   const jsonData = [
     { name: "John", age: 30, city: "New York" },
     { name: "Jane", age: 25, city: "Los Angeles" }
