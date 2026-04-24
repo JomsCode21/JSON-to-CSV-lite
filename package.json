@@ -1,7 +1,7 @@
 {
-  "name": "json-to-csv-lite",
+  "name": "@jomscode21/json-to-csv-lite",
   "version": "1.0.0",
-  "description": "A lightweight JSON to CSV converter",
+  "description": "Fast, lightweight JSON-to-CSV converter for Node.js and CLI use",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -29,11 +29,22 @@
     "npm-package",
     "cli"
   ],
-  "author": "Jhumari Job Galos",
+  "author": "JomsCode21",
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
     "tsup": "^8.5.1",
     "typescript": "^6.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JomsCode21/JSON-to-CSV-lite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JomsCode21/JSON-to-CSV-lite/issues"
+  },
+  "homepage": "https://github.com/JomsCode21/JSON-to-CSV-lite#readme",
+  "publishConfig": {
+    "access": "public"
   }
 }
